@@ -127,7 +127,7 @@ node* deleteNode(node* root, int x) {
 
 
 void inorder(node* Root) {
-    if (Root == NULL) return NULL; 
+    if (Root == NULL) return; 
     
         inorder(Root->left);
         printf("%d ", Root->key);
@@ -136,25 +136,25 @@ void inorder(node* Root) {
 }
 void preorder(node *root){
     
-if(root==NULL) return NULL;
+if(root==NULL) return ;
 
-    printf("%d",Root->key);
+    printf("%d ",root->key);
     preorder(root->left);
     preorder(root->right);
 }
 
-void postorder(node *Root){
-if(root == NULL) return NULL;
+void postorder(node *root){
+if(root == NULL) return ;
     
     postorder(root->left);
     postorder(root->right);
-    printf("%d",root->key);
+    printf("%d ",root->key);
 }
     
 
 int main() {
     node* root = NULL;
-    int choice, key, pred, succ;
+    int choice, key, pred, succ,x;
 
     while (1) {
         printf("\nMenu:\n");
@@ -193,7 +193,6 @@ int main() {
                 printf("Successor: %d\n", succ);
                 break;
             case 4:
-                int x;
                 printf("Enter value of key which you want to delete : ");
                 scanf("%d",&x);
                 root=deleteNode(root,x);
