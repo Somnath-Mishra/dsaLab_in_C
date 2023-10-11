@@ -127,12 +127,30 @@ node* deleteNode(node* root, int x) {
 
 
 void inorder(node* Root) {
-    if (Root) {
+    if (Root == NULL) return NULL; 
+    
         inorder(Root->left);
         printf("%d ", Root->key);
         inorder(Root->right);
-    }
+    
 }
+void preorder(node *root){
+    
+if(root==NULL) return NULL;
+
+    printf("%d",Root->key);
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void postorder(node *Root){
+if(root == NULL) return NULL;
+    
+    postorder(root->left);
+    postorder(root->right);
+    printf("%d",root->key);
+}
+    
 
 int main() {
     node* root = NULL;
@@ -145,7 +163,10 @@ int main() {
         printf("3. Find in-order predecessor and successor of a key\n");
         printf("4. Delete a key\n");
         printf("5. Print in-order traversal\n");
-        printf("6. Exit\n");
+        printf("6. Print pre-order traversal\n");
+        printf("7. Print post-order traversal\n");
+        printf("8. Exit\n");
+        
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -183,6 +204,17 @@ int main() {
                 printf("\n");
                 break;
             case 6:
+                printf("pre-order traversal: ");
+                preorder(root);
+                printf("\n");
+                break;
+            case 7:
+                printf("post-order traversal: ");
+                postorder(root);
+                printf("\n");
+                break;
+            
+            case 8:
                 printf("Exiting Program !!\n");
                 return 0;
             default:
