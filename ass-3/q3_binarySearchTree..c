@@ -118,11 +118,15 @@ node* deleteNode(node* root, int x) {
             free(root);
             return temp;
         }
+        else{
         node* temp = getSuccessor(root);
         root->key = temp->key;
         root->right = deleteNode(root->right, temp->key);
+        }
     }
+    
     return root;
+    
 }
 
 
