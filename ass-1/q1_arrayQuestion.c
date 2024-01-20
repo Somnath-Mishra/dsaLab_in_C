@@ -11,7 +11,7 @@ int main(){
     for(i=4;i<7;i++){
         arr[i]=arr[i+1];
     }
-    printf("%d",arr[4]);
+    printf("%d ",arr[4]);
     return 0;
     
 }
